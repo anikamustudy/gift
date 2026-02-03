@@ -1,0 +1,21 @@
+{
+  "name": "gift-platform-monorepo",
+  "version": "1.0.0",
+  "description": "Membership-based gifting platform - MERN stack",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "start-backend": "cd backend && npm start",
+    "start-frontend": "cd frontend && npm run dev"
+  },
+  "keywords": [
+    "gift",
+    "mern",
+    "membership"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
