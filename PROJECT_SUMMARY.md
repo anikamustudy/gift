@@ -302,8 +302,9 @@ Prepared for:
 - jsonwebtoken: 9.0.2 - JWT authentication
 - bcryptjs: 2.4.3 - Password hashing
 - stripe: 13.5.0 - Payment processing
-- cloudinary: 1.40.0 - Image storage
-- nodemailer: 6.9.4 - Email service
+- cloudinary: 2.7.0 - Image storage (security patched)
+- nodemailer: 7.0.7 - Email service (security patched)
+- multer: 2.0.2 - File upload (security patched)
 - helmet: 7.0.0 - Security headers
 - cors: 2.8.5 - CORS handling
 - express-rate-limit: 6.10.0 - Rate limiting
