@@ -54,7 +54,7 @@ const createOrder = async (req, res) => {
     }
 
     // Calculate Love Impact contribution (2% of total)
-    const loveImpactContribution = Math.round(totalAmount * 0.02);
+    const loveImpactContribution = Math.round(totalAmount * 0.02 * 100) / 100;
 
     // Create order
     const order = await Order.create({

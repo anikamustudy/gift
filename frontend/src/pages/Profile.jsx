@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { userService } from '../services';
+import { useToast } from '../context/ToastContext';
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(false);
+  const { success, error: showError } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -68,10 +70,10 @@ const Profile = () => {
       await userService.updateProfile(formData);
       await fetchProfile();
       setEditing(false);
-      alert('Profile updated successfully');
+      success('Profile updated successfully');
     } catch (error) {
       console.error('Error updating profile:', error);
-      alert('Failed to update profile');
+      showError('Failed to update profile');
     }
   };
 

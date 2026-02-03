@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import { authService } from '../services/authService';
 import { motion } from 'framer-motion';
 
@@ -22,6 +23,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
 
   const { verifyOTP } = useAuth();
+  const { success, error: showError } = useToast();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -70,7 +72,7 @@ const Register = () => {
   const handleResendOTP = async () => {
     try {
       await authService.resendOTP(formData.email);
-      alert('OTP resent successfully');
+      success('OTP resent successfully');
     } catch (err) {
       setError('Failed to resend OTP');
     }
